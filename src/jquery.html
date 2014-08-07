@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello World</title>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+    <input type="text"/>
+    <h1>Hello</h1>
+    <ul>
+    </ul>
+</body>
+</html>
+
+<script>
+$( document ).ready(function() {
+
+    $( "body input" ).keypress(function() {
+	  $("body h1").text("Hello " + $("body input").val());
+	  var result = $.grep(nameArray, function(e) { 
+               return $.inArray($("body input").val(), nameArray) != -1;
+             });
+	  $("body ul").html('<li>' + result + '</li>');
+	});
+
+	var employees = [
+		{'name' : 'ryan', 'lunch' : 7.879789},
+		{'name' : 'brian', 'lunch' : 8.657567},
+		{'name' : 'ken', 'lunch' : 9.456456},
+		{'name' : 'barg', 'lunch' : 4.4564564},
+		{'name' : 'jesse', 'lunch' : 5.456},
+		{'name' : 'sylvia', 'lunch' : 10.2343},
+		{'name' : 'gwyn', 'lunch' : 12.2234},
+		{'name' : 'patrick', 'lunch' : 3.2234234}];
+	var nameArray = [];
+
+	$.each(employees, function(i, e){
+		$("body ul").append('<li>' + e.name + '</li>');
+		nameArray.push(e.name);
+	});
+});
+</script>

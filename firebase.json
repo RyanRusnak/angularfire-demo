@@ -1,0 +1,9 @@
+{
+  "firebase": "boiling-fire-8257",
+  "public": "src",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
